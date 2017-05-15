@@ -5,6 +5,9 @@ import classNames from 'classnames';
 import calculateNodeHeight from './calculateNodeHeight';
 import assign from 'object-assign';
 import omit from 'omit.js';
+import Group from './Group';
+import Search from './Search';
+import Textarea from './Textarea';
 
 function fixControlledValue(value) {
   if (typeof value === 'undefined' || value === null) {
@@ -62,8 +65,10 @@ export interface InputProps {
 }
 
 export default class Input extends Component<InputProps, any> {
-  static Group: any;
-  static Search: any;
+  static Group: typeof Group;
+  static Search: typeof Search;
+  static Textarea: typeof Textarea;
+
   static defaultProps = {
     disabled: false,
     prefixCls: 'ant-input',
